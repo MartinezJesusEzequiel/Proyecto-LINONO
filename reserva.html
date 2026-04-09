@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas Il Nono</title>
+</head>
+
+<body>
+    <header>
+        <h1>Restaurante LI NONO</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="carta.html">Carta</a></li>
+                <li><a href="reserva.html">Reservas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+            <h2>Dia de la Reserva</h2>
+            <section>
+                <p><input type="date"
+                        name="fecha"
+                        min="2025-01-01"
+                        max="2025-12-31"
+                        value="2025-04-08">
+                    </p>
+
+            </section>
+        </article>
+
+        <article>
+            <h2>Cantidad de Comensales</h2>
+            <section>
+                <p><input type="number"
+                            name="cantidad"
+                            min="1"
+                            max="12"
+                            step="1"
+                            value="1"></p>
+
+            </section>
+        </article>
+
+        <article>
+            <h2>A tener en cuenta(EJ: asisto con un bebe...)</h2>
+            <section>
+                <p><input type="text" 
+                        name="usuario"
+                        placeholder="..."
+                        maxlength="50"
+                        autocomplete="name"></p>
+            </section>
+        </article>
+
+</body>
+</html>
