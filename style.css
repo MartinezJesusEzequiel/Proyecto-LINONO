@@ -152,3 +152,95 @@ header nav ul, header nav li, header nav a {
   .hero-content h1 { font-size: 2rem; }
 }
 
+/* ============================================================
+   ESTILOS ESPECÍFICOS PARA LA CARTA (Il Nonno)
+   Este bloque solo afecta a lo que esté dentro de .seccion-carta
+   ============================================================ */
+
+
+/* ============================================================
+   ESTILOS DE LA CARTA (Il Nonno) - NO TOCAR LO DE ARRIBA
+   ============================================================ */
+
+/* 1. Arreglamos el problema de los botones pisados */
+header nav {
+    pointer-events: auto !important; /* Permite hacer clic */
+    z-index: 9999 !important;      /* Lo pone al frente de todo */
+}
+
+/* 2. Tu sección de la carta */
+.seccion-carta {
+    display: block !important;
+    clear: both !important;
+    max-width: 850px;
+    
+    /* El 150px es para que baje y no quede bajo los botones */
+    margin: 150px auto 50px auto !important; 
+    
+    padding: 40px;
+    background-color: #fdfaf6; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    font-family: 'Georgia', serif;
+    color: #333;
+    border-radius: 15px;
+    position: relative;
+}
+
+/* 3. Estilos de contenido */
+.seccion-carta h2#menu-titulo {
+    text-align: center;
+    color: #800000;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #c5a059;
+    padding-bottom: 10px;
+}
+
+.seccion-carta h3 {
+    color: #c5a059;
+    margin-top: 25px;
+    border-left: 5px solid #800000;
+    padding-left: 10px;
+    font-style: italic;
+}
+
+.seccion-carta li {
+    list-style: none;
+    margin-bottom: 25px;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 15px;
+}
+
+.seccion-carta h4 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+}
+
+.seccion-carta h4 span {
+    color: #800000;
+    font-weight: bold;
+}
+
+.seccion-carta p {
+    font-style: italic;
+    color: #666;
+    margin: 5px 0;
+}
+
+.seccion-carta strong {
+    font-size: 0.7rem;
+    background: #eee;
+    padding: 3px 8px;
+    border-radius: 20px;
+    margin-right: 5px;
+    text-transform: uppercase;
+    border: 1px solid #ddd;
+}
+
+/* 4. Si el h1 del nombre se pisa, lo ocultamos solo en esta página */
+header h1 {
+    opacity: 0;
+    height: 0;
+    margin: 0;
+}
