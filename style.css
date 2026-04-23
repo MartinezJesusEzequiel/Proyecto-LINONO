@@ -1,38 +1,148 @@
 /* Estilos globales */
 * {
   box-sizing: border-box; /* incluye padding/border en el ancho total */
-margin: 30;
-padding: 500;
+  margin: 0;
+  padding: 0;
 }
 
 body {
 font-family: Arial, sans-serif;
 line-height: 1.6;
 color: #333;
+/* evitar scroll horizontal cuando usamos full-bleed */
+overflow-x: hidden;
 }
 
 header, footer {
-background-color: #f8f8f8;
-padding: 10px 20px;
-text-align: center;
+  background-color: transparent; /* header será transparente para que el hero sea full-bleed */
+  padding: 0;
+  text-align: center;
+  position: relative; /* para que elementos absolutos dentro (nav) se posicionen respecto al header */
 }
 
 nav ul {
-list-style-type: none;
-padding: 0;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 60px;
 }
 
 nav ul li {
-display: inline;
-margin: 0 15px;
+  display: inline-block;
 }
 
 nav ul li a {
-text-decoration: none;
-color: #333;
-font-weight: bold;
+  text-decoration: none;
+  color: #fff; /* links blancos sobre la imagen */
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.25);
+  transition: background 0.2s ease, transform 0.15s ease;
 }
 
 nav ul li a:hover {
-color: #007BFF;
+  background: rgba(255,255,255,0.12);
+  transform: translateY(-2px);
+}
+
+/* Posicionar el nav encima del hero */
+header nav {
+  position: absolute;
+  top: 18px;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  pointer-events: none; /* permitimos pointer-events solo en los enlaces */
+}
+
+header nav ul, header nav li, header nav a {
+  pointer-events: auto;
+}
+
+@media (max-width: 700px) {
+  header nav { top: 10px; }
+  nav ul { gap: 20px; }
+  nav ul li a { padding: 10px 18px; font-size: 0.95rem; }
+}
+
+/* HERO - carrusel de fondo solo con CSS */
+.hero {
+  position: relative;
+  /* full-bleed: ocupar todo el ancho de la ventana incluso dentro de un contenedor con padding */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  min-height: 100vh; /* ajustable */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slides {
+  position: absolute;
+  inset: 0; /* top/right/bottom/left: 0 */
+  z-index: 0;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: slideFade 12s infinite;
+}
+
+.slide1 { background-image: url('interior.jpg'); animation-delay: 0s; }
+.slide2 { background-image: url('plato.jpg'); animation-delay: 4s; }
+.slide3 { background-image: url('fideos.jpg'); animation-delay: 8s; }
+
+@keyframes slideFade {
+  0% { opacity: 0; transform: scale(1.05); }
+  6% { opacity: 1; transform: scale(1); }
+  30% { opacity: 1; transform: scale(1); }
+  36% { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 0; }
+}
+
+/* overlay para mejorar legibilidad del texto sobre la imagen */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.25));
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2; /* por encima de las slides */
+  max-width: 1000px;
+  padding: 40px 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+/* Responsive tweaks */
+@media (max-width: 700px) {
+  .hero { min-height: 50vh; }
+  .hero-content h1 { font-size: 2rem; }
 }
