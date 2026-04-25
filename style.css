@@ -152,6 +152,60 @@ header nav ul, header nav li, header nav a {
   .hero-content h1 { font-size: 2rem; }
 }
 
+/* --- SECCIÓN HISTORIA --- */
+.seccion-historia {
+    padding: 100px 20px;
+    background-color: #fdfaf6;
+    text-align: center; /* Centra el título y la intro */
+}
+
+.contenedor-historia {
+    max-width: 800px; /* Un poco más angosto hace que el texto largo se lea mejor */
+    margin: 0 auto;
+}
+
+#historia-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #800000;
+    margin-bottom: 10px;
+    display: block; /* Asegura que ocupe su propia línea para centrarse bien */
+}
+
+#historia-titulo::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #c5a059;
+    margin: 15px auto; /* Centra la barrita dorada */
+}
+
+.introduccion {
+    font-style: italic;
+    font-size: 1.5rem;
+    color: #c5a059;
+    margin-bottom: 50px;
+    font-weight: 300;
+}
+
+.texto-extenso {
+    text-align: justify; /* Hace que el texto se vea prolijo y cuadrado */
+    color: #444;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    column-count: 1; /* Podés cambiarlo a 2 si querés estilo revista, pero 1 es más íntimo */
+}
+
+.texto-extenso p {
+    margin-bottom: 20px;
+    text-indent: 20px; /* Un pequeño espacio al empezar cada párrafo, muy de libro antiguo */
+}
+
+.texto-extenso strong {
+    color: #800000;
+}
+
 /* ============================================================
    ESTILOS DE LA CARTA (Il Nonno)
    Este bloque solo afecta a lo que esté dentro de .seccion-carta
