@@ -153,13 +153,9 @@ header nav ul, header nav li, header nav a {
 }
 
 /* ============================================================
-   ESTILOS ESPECÍFICOS PARA LA CARTA (Il Nonno)
+   ESTILOS DE LA CARTA (Il Nonno)
    Este bloque solo afecta a lo que esté dentro de .seccion-carta
-   ============================================================ */
-
-
-/* ============================================================
-   ESTILOS DE LA CARTA (Il Nonno) - NO TOCAR LO DE ARRIBA
+   NO TOCA LO DE ARRIBA
    ============================================================ */
 
 /* 1. Arreglamos el problema de los botones pisados */
@@ -243,4 +239,117 @@ header h1 {
     opacity: 0;
     height: 0;
     margin: 0;
+}
+
+/* Estilo para las fotos de las categorías */
+.seccion-carta .foto-categoria {
+    width: 120px;          /* Más chica como pediste */
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;    /* Circular */
+    border: 3px solid #c5a059;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    flex-shrink: 0;        /* Evita que la imagen se aplaste */
+}
+
+.seccion-carta article {
+    display: flex;
+    align-items: center;   /* Centra verticalmente la foto con el texto */
+    gap: 25px;             /* Espacio entre la foto y el texto */
+    margin-bottom: 40px;
+    padding: 10px;
+}
+
+/* Este bloque es para que el texto ocupe el resto del espacio */
+.seccion-carta .contenedor-texto-platos {
+    flex-grow: 1;
+}
+
+/* ============================================================
+   ESTILOS ESPECÍFICOS PARA RESERVAS (Il Nonno)
+   ============================================================ */
+
+.seccion-reserva {
+    max-width: 600px; /* Un poco más angosto que la carta para que se vea como ficha */
+    margin: 150px auto 60px auto !important; 
+    padding: 40px;
+    background-color: #fdfaf6; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    font-family: 'Georgia', serif;
+    border-radius: 15px;
+    border-top: 5px solid #800000; /* Detalle bordó arriba */
+}
+
+.titulo-reserva {
+    text-align: center;
+    color: #800000;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.seccion-reserva article {
+    margin-bottom: 25px;
+}
+
+.seccion-reserva label {
+    display: block;
+    font-weight: bold;
+    color: #c5a059; /* Dorado */
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+/* Estilo para los campos de entrada (inputs) */
+.seccion-reserva input, 
+.seccion-reserva textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.seccion-reserva input:focus, 
+.seccion-reserva textarea:focus {
+    border: 2px solid #800000; /* Se pone bordó al hacer clic */
+}
+
+/* Estilo del botón */
+.btn-enviar {
+    width: 100%;
+    padding: 15px;
+    background-color: #800000;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background 0.3s, transform 0.1s;
+    margin-top: 10px;
+}
+
+.btn-enviar:hover {
+    background-color: #a00000;
+    transform: translateY(-2px);
+}
+
+.btn-enviar:active {
+    transform: translateY(0);
+}
+
+.horarios {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+.horarios span {
+    color: #c5a059; /* El dorado que venimos usando */
+    font-weight: bold;
 }
