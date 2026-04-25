@@ -1,4 +1,6 @@
-/* Estilos globales */
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
 * {
   box-sizing: border-box; /* incluye padding/border en el ancho total */
   margin: 0;
@@ -6,7 +8,7 @@
 }
 
 body {
-font-family: Arial, sans-serif;
+font-family: Arial, cursive;
 line-height: 1.6;
 color: #333;
 /* evitar scroll horizontal cuando usamos full-bleed */
@@ -130,9 +132,12 @@ header nav ul, header nav li, header nav a {
 }
 
 .hero-content h1 {
-  font-size: 3rem;
+  font-size: 4rem;
   margin-bottom: 10px;
   text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  font-family: 'Great Vibes', 'Georgia', cursive;
+  font-weight: 400;
+  letter-spacing: 1px;
 }
 
 .hero-content p {
