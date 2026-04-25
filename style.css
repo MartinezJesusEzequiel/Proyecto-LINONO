@@ -22,6 +22,20 @@ header, footer {
   position: relative; /* para que elementos absolutos dentro (nav) se posicionen respecto al header */
 }
 
+header h1 {
+  font-family: 'Great Vibes', 'Georgia', cursive;
+  font-size: 3.5rem;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  margin: 100px auto 20px;
+  z-index: 2;
+  position: relative;
+}
+
+.hero-content {
+  padding-top: 10;
+}
+
 nav ul {
   list-style-type: none;
   padding: 0;
@@ -113,7 +127,7 @@ header nav ul, header nav li, header nav a {
   100% { opacity: 0; }
 }
 
-/* overlay para mejorar legibilidad del texto sobre la imagen */
+
 .hero::before {
   content: '';
   position: absolute;
@@ -124,7 +138,7 @@ header nav ul, header nav li, header nav a {
 
 .hero-content {
   position: relative;
-  z-index: 2; /* por encima de las slides */
+  z-index: 2; 
   max-width: 1000px;
   padding: 40px 20px;
   color: #fff;
@@ -156,11 +170,11 @@ header nav ul, header nav li, header nav a {
 .seccion-historia {
     padding: 100px 20px;
     background-color: #fdfaf6;
-    text-align: center; /* Centra el título y la intro */
+    text-align: center; 
 }
 
 .contenedor-historia {
-    max-width: 800px; /* Un poco más angosto hace que el texto largo se lea mejor */
+    max-width: 800px; 
     margin: 0 auto;
 }
 
@@ -169,7 +183,7 @@ header nav ul, header nav li, header nav a {
     font-size: 3rem;
     color: #800000;
     margin-bottom: 10px;
-    display: block; /* Asegura que ocupe su propia línea para centrarse bien */
+    display: block; 
 }
 
 #historia-titulo::after {
@@ -178,7 +192,7 @@ header nav ul, header nav li, header nav a {
     width: 80px;
     height: 3px;
     background-color: #c5a059;
-    margin: 15px auto; /* Centra la barrita dorada */
+    margin: 15px auto; 
 }
 
 .introduccion {
@@ -190,16 +204,16 @@ header nav ul, header nav li, header nav a {
 }
 
 .texto-extenso {
-    text-align: justify; /* Hace que el texto se vea prolijo y cuadrado */
+    text-align: justify; 
     color: #444;
     line-height: 1.8;
     font-size: 1.1rem;
-    column-count: 1; /* Podés cambiarlo a 2 si querés estilo revista, pero 1 es más íntimo */
+    column-count: 1; 
 }
 
 .texto-extenso p {
     margin-bottom: 20px;
-    text-indent: 20px; /* Un pequeño espacio al empezar cada párrafo, muy de libro antiguo */
+    text-indent: 20px; 
 }
 
 .texto-extenso strong {
@@ -212,19 +226,19 @@ header nav ul, header nav li, header nav a {
    NO TOCA LO DE ARRIBA
    ============================================================ */
 
-/* 1. Arreglamos el problema de los botones pisados */
+
 header nav {
-    pointer-events: auto !important; /* Permite hacer clic */
-    z-index: 9999 !important;      /* Lo pone al frente de todo */
+    pointer-events: auto !important;
+    z-index: 9999 !important;     
 }
 
-/* 2. Tu sección de la carta */
+
 .seccion-carta {
     display: block !important;
     clear: both !important;
     max-width: 850px;
     
-    /* El 150px es para que baje y no quede bajo los botones */
+   
     margin: 150px auto 50px auto !important; 
     
     padding: 40px;
@@ -288,33 +302,31 @@ header nav {
     border: 1px solid #ddd;
 }
 
-/* 4. Si el h1 del nombre se pisa, lo ocultamos solo en esta página */
-header h1 {
+.no-index-page header h1 {
     opacity: 0;
     height: 0;
     margin: 0;
 }
 
-/* Estilo para las fotos de las categorías */
+
 .seccion-carta .foto-categoria {
-    width: 120px;          /* Más chica como pediste */
+    width: 120px;          
     height: 120px;
     object-fit: cover;
-    border-radius: 50%;    /* Circular */
+    border-radius: 50%;    
     border: 3px solid #c5a059;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    flex-shrink: 0;        /* Evita que la imagen se aplaste */
+    flex-shrink: 0;        
 }
 
 .seccion-carta article {
     display: flex;
-    align-items: center;   /* Centra verticalmente la foto con el texto */
-    gap: 25px;             /* Espacio entre la foto y el texto */
+    gap: 25px;             
     margin-bottom: 40px;
     padding: 10px;
 }
 
-/* Este bloque es para que el texto ocupe el resto del espacio */
+
 .seccion-carta .contenedor-texto-platos {
     flex-grow: 1;
 }
@@ -324,14 +336,14 @@ header h1 {
    ============================================================ */
 
 .seccion-reserva {
-    max-width: 600px; /* Un poco más angosto que la carta para que se vea como ficha */
+    max-width: 600px; 
     margin: 150px auto 60px auto !important; 
     padding: 40px;
     background-color: #fdfaf6; 
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     font-family: 'Georgia', serif;
     border-radius: 15px;
-    border-top: 5px solid #800000; /* Detalle bordó arriba */
+    border-top: 5px solid #800000; 
 }
 
 .titulo-reserva {
@@ -349,12 +361,12 @@ header h1 {
 .seccion-reserva label {
     display: block;
     font-weight: bold;
-    color: #c5a059; /* Dorado */
+    color: #c5a059; 
     margin-bottom: 10px;
     font-size: 1.1rem;
 }
 
-/* Estilo para los campos de entrada (inputs) */
+
 .seccion-reserva input, 
 .seccion-reserva textarea {
     width: 100%;
@@ -370,10 +382,10 @@ header h1 {
 
 .seccion-reserva input:focus, 
 .seccion-reserva textarea:focus {
-    border: 2px solid #800000; /* Se pone bordó al hacer clic */
+    border: 2px solid #800000; 
 }
 
-/* Estilo del botón */
+
 .btn-enviar {
     width: 100%;
     padding: 15px;
@@ -404,6 +416,5 @@ header h1 {
     color: #ccc;
 }
 .horarios span {
-    color: #c5a059; /* El dorado que venimos usando */
-    font-weight: bold;
+    color: #c5a059; 
 }
